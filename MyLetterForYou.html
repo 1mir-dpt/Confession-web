@@ -46,23 +46,67 @@
             color: #ff6347;
             font-weight: bold;
         }
+      }
+
+        /* Audio player */
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 10px;
+        }
     </style>
   </head>
 <body>
     <div class="container">
         <h1>Hi, ada sesuatu yang nak saya bagitahu...</h1>
         <p>Tekan butang di bawah untuk tahu lebih lanjut:</p>
-        <button id="revealButton">Buka Pengakuan</button>
-        <p class="confession" id="confessionText">Saya suka awak :)</p>
+        <button id="revealButton">Next</button>
+        <p class="confession" id="confessionText">Sebenarnya saya dah lama nak cakap benda ni :)</p>
+       <button id="revealButton">Next</button>
+        <p class="confession" id="confessionText"> Saya suka awak, dan saya rasa awak pun tahu </p>
+      <button id="revealButton">Next</button>
+        <p class="confession" id="confessionText"> Is it okay if i want to get to know you better? </p>
+      
+<!-- Audio Player -->
+        <audio id="backgroundAudio" controls>
+            <source src="audio/somebody.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+      
+<!-- Buttons for accepting or rejecting -->
+        <div id="responseButtons" style="display: none;">
+            <button id="acceptButton">Terima</button>
+            <button id="rejectButton">Tidak</button>
+      
     </div>
 
     <script>
-        const button = document.getElementById('revealButton');
+        // JavaScript to reveal confession and show response buttons
+        const revealButton = document.getElementById('revealButton');
         const confessionText = document.getElementById('confessionText');
+        const responseButtons = document.getElementById('responseButtons');
+        const resultMessage = document.getElementById('resultMessage');
+        
+        revealButton.addEventListener('click', function() {
+            confessionText.classList.add('show');
+            responseButtons.style.display = 'block';
+            revealButton.style.display = 'none';
+        });
 
-        button.addEventListener('click', function() {
-            confessionText.style.display = 'block';
-            button.style.display = 'none';
+        // Handling "Terima" button click
+        const acceptButton = document.getElementById('acceptButton');
+        acceptButton.addEventListener('click', function() {
+            resultMessage.textContent = "Thanks God, so bila kita nak kawen?";
+            resultMessage.style.color = 'green';
+            responseButtons.style.display = 'none';
+        });
+
+        // Handling "Tidak" button click
+        const rejectButton = document.getElementById('rejectButton');
+        rejectButton.addEventListener('click', function() {
+            resultMessage.textContent = "Thank you, i'll respect your decision, atleast im ready to moving on hehe :).";
+            resultMessage.style.color = 'red';
+            responseButtons.style.display = 'none';
         });
     </script>
 </body>
