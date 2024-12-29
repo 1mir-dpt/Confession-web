@@ -60,12 +60,14 @@
     <div class="container">
         <h1>Hi, ada sesuatu yang nak saya bagitahu...</h1>
         <p>Tekan butang di bawah untuk tahu lebih lanjut:</p>
-        <button id="revealButton">Next</button>
-        <p class="confession" id="confessionText">Sebenarnya saya dah lama nak cakap benda ni :)</p>
-       <button id="revealButton">Next</button>
-        <p class="confession" id="confessionText"> Saya suka awak, dan saya rasa awak pun tahu </p>
-      <button id="revealButton">Next</button>
-        <p class="confession" id="confessionText"> Is it okay if i want to get to know you better? </p>
+        <button id="nextButton">Next</button>
+        <h2>Sebenarnya saya dah lama nak cakap benda ni :)</h2>
+        <p>Tekan butang di bawah untuk tahu lebih lanjut:</p>
+        <button id="nextButton">Next</button>
+        <h3> Saya suka awak, dan saya rasa awak pun tahu </h3>
+        <p>Tekan butang di bawah untuk tahu lebih lanjut:</p>
+        <button id="nextButton">Next</button>
+        <h4>Is it okay if i want to get to know you better? </h4>
       
 <!-- Audio Player -->
         <audio id="backgroundAudio" controls>
@@ -91,6 +93,12 @@
             confessionText.classList.add('show');
             responseButtons.style.display = 'block';
             revealButton.style.display = 'none';
+        });
+      
+        // Event listener untuk butang
+        document.getElementById("nextButton").addEventListener("click", function () {
+            // Masuk ke halaman lain
+            window.location.href = "page2.html";
         });
 
         // Handling "Terima" button click
