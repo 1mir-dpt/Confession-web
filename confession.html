@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Love Letter</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+      }
 
+      .container {
+        background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+        }
+
+       button {
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #005f73;
+        }
+
+        .confession {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff6347;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+<body>
+    <div class="container">
+        <h1>Hi, ada sesuatu yang nak saya bagitahu...</h1>
+        <p>Tekan butang di bawah untuk tahu lebih lanjut:</p>
+        <button id="revealButton">Buka Pengakuan</button>
+        <p class="confession" id="confessionText">Saya suka awak :)</p>
+    </div>
+
+    <script>
+        const button = document.getElementById('revealButton');
+        const confessionText = document.getElementById('confessionText');
+
+        button.addEventListener('click', function() {
+            confessionText.style.display = 'block';
+            button.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
